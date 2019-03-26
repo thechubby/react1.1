@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en" >
+
+<head>
+  <meta charset="UTF-8">
+  <title>React JS1</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+  <div id="app"></div>
+  
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/react/16.2.0/umd/react.development.js'></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/react-dom/16.2.0/umd/react-dom.development.js'></script>
+<script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+
+<script src="https://unpkg.com/prop-types@15.6/prop-types.js"></script>
+
+<script src="js/data.js"></script>
+<script type="text/babel" src="js/AddBookForm.js"></script>
+
+<script type="text/babel" src="js/App.js"></script>
+<script type="text/babel" src="js/Basket.js"></script>
+<script type="text/babel" src="js/Book.js"></script>
+<script type="text/babel" src="js/BookWithoutPrice.js"></script>
+<script type="text/babel" src="js/SearchForm.js"></script>
+<script type="text/babel" src="js/Footer.js"></script>
+
+
+
+<script type="text/babel">
+//https://reactjs.org/docs/typechecking-with-proptypes.html
+//https://www.npmjs.com/package/prop-types
+App.propTypes = {
+  dataBook: PropTypes.array
+};
+Footer.propTypes = {
+  year: PropTypes.number
+};
+
+ReactDOM.render(
+ <div>
+  <App dataBook={dataBook} />
+  <Footer year={new Date().getFullYear()} />
+ </div>,
+  document.getElementById("app")
+);
+</script>
+<!-- https://codepen.io/anon/pen/JvQPpy -->
+
+
+
+</body>
+
+</html>

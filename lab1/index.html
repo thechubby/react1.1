@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/react/16.2.0/umd/react.development.js'></script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/react-dom/16.2.0/umd/react-dom.development.js'></script>
+    <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+    <script src="https://unpkg.com/prop-types@15.6/prop-types.js"></script>
+    <script src="js/data.js"></script>
+</head>
+<body>
+    <div id="app"></div>
+    
+    <script type="text/babel">
+        const book = (
+        <div className='book'>
+            <h3>{dataBook[0]['title']}</h3>
+            <p>Автор: {dataBook[0]['author']}</p>
+            <p>Автор: {dataBook[0]['price']}</p>
+        </div>
+        )
+        
+        ReactDOM.render(
+        book,
+        document.getElementById('app')
+        );
+    </script> 
+
+</body>
+</html>

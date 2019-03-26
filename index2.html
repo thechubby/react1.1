@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>eshop</title>
+</head>
+<body>
+  <div id="app"></div>
+  
+  <script crossorigin src="https://unpkg.com/react@16/umd/react.development.js"></script>
+<script crossorigin src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
+<script crossorigin src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/6.26.0/babel.min.js"></script>
+
+<script type='text/babel'> 
+
+const dataBook =  [
+  {id:1, title:"Book 1",author:"Author 1", price: 500}, 
+  {id:5, title:"Book 2",author:"Author 2", price: 1200},
+  {id:10, title:"Book 10",author:"Author 10", price: null},
+];
+
+const formatPrice = price => {
+	return price ? <strong>{price}</strong>:<del>&nbsp;</del>
+}
+
+let books = [];
+for(let i in dataBook){
+    
+    function Book(props) {
+      const price = price ? <strong>price</strong> : <del>&nbsp;</del>;
+      return <div className="book">
+      <h3>{props.title}</h3>
+      <img src={'http://placehold.it/100x120?text='+props.title} alt="" />
+      <p>Автор: {props.author}</p>
+      <p>Цена: {price} руб.</p>
+     </div>
+    }
+	books.push(book);
+}
+
+ReactDOM.render(
+  <Book title={dataBook[2]["title"]} author={dataBook[2]["author"]} price={dataBook[2]["price"]}/>,
+  document.getElementById('app')
+);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</script> 
+
+
+
+</body>
+</html>

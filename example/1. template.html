@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>template</title>
+</head>
+<body>
+  <div id="root"></div>
+  
+<script crossorigin src="https://unpkg.com/react@16/umd/react.development.js"></script>
+<script crossorigin src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
+
+<script> 
+ const element = React.createElement(
+   'h1',
+   null,
+   'Привет, мир!'
+ );
+ ReactDOM.render(
+   element,
+   document.querySelector('#root')
+ );
+
+
+</script> 
+
+
+
+</body>
+</html>

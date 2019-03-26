@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>setState</title>
+  <style>
+  .night{ background: #000; color: #fff }
+  </style>
+</head>
+<body>
+  <div id="root"></div>
+  
+<script crossorigin src="https://unpkg.com/react@16/umd/react.development.js"></script>
+<script crossorigin src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
+<script crossorigin src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/6.26.0/babel.min.js"></script>
+
+<script type='text/babel'> 
+
+
+
+
+class Welcome extends React.Component{
+  constructor(props){
+	super(props);  
+	console.log(this);
+	this.state = {night: true, foo: 23};
+	this.changeState = this.changeState.bind(this);
+  }
+  
+  changeState(){
+	console.log(this);  
+	const newState = {night: !this.state.night};
+	this.setState(newState);
+	//console.log(this.state.night);//не пишем
+	console.log(newState);//пишем так
+  }
+  
+  render(){	
+    const night = this.state.night;
+    return <h1 onClick={this.changeState} className={night ? 'night' : 'day'}>
+	Hello, {this.props.name} {this.props.age}!
+	</h1>
+  }
+}
+
+ReactDOM.render(
+  <Welcome name='Вася' age='20'/>,
+  document.querySelector('#root')
+);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</script> 
+
+
+
+</body>
+</html>

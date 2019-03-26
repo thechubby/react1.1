@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>attributes</title>
+  <style>
+  .foo{ font: 2em sans-serif }
+  </style>
+</head>
+<body>
+  <div id="root"></div>
+  
+<script crossorigin src="https://unpkg.com/react@16/umd/react.development.js"></script>
+<script crossorigin src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
+
+<script> 
+ const element = React.createElement(
+   'h1',
+   { className: 'foo', id: 'header' },
+   'Привет, мир!'
+ );
+ ReactDOM.render(
+   element,
+   document.querySelector('#root')
+ );
+
+
+</script> 
+
+
+
+</body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>expression</title>
+  <style>
+  .foo{ font: 2em sans-serif }
+  </style>
+</head>
+<body>
+  <div id="root"></div>
+  
+<script crossorigin src="https://unpkg.com/react@16/umd/react.development.js"></script>
+<script crossorigin src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
+<script crossorigin src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/6.26.0/babel.min.js"></script>
+
+<script type='text/babel'> 
+ const element = (
+	 <div>
+       Сейчас {new Date().toLocaleTimeString()}
+	 </div>
+ );
+ 
+ ReactDOM.render(
+   element,
+   document.querySelector('#root')
+ );
+
+
+</script> 
+
+
+
+</body>
+</html>

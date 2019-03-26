@@ -1,0 +1,74 @@
+* {
+      font-family: sans-serif;
+      color: #333;
+    }
+    .addbookform label{
+      width: 100px;
+      display: inline-block;
+    }
+    
+    .addbookform div{
+      margin: 2px 3px;
+    }    
+    .addbookform input,
+    form input{
+      border: 1px solid #e5e5e5;
+      margin: 2px;
+      outline: 0
+    }
+
+    .btn{
+    cursor: pointer;
+    display: inline-block;
+    font-weight: 400;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    border: 1px solid transparent;
+    padding: .1rem .2rem;
+    font-size: 1rem;
+    line-height: 1.5;
+    border-radius: .25rem;
+      text-decoration: none;
+    }
+    .btn-success:hover {
+    color: #fff;
+    background-color: #28a745;
+    border-color: #28a745;
+    }
+    .btn-success {
+    color: #fff;
+    background-color: #28a745;
+    border-color: #28a745;
+    }
+   .night{
+     background: #444;   
+     padding: 10px;
+     color: #efefef;
+   }
+   .day{
+     background: #efefef;    
+     color: #868686;
+   }
+   .book-selected{
+     background: rgba(130,160,180,.2);    
+   }
+   .basket{
+   position: fixed;
+   background: rgba(255,255,255,.8);
+   top:0;
+   right: 0;
+   margin: 20px;
+   border: 1px solid rgba(0,0,0,.1);
+  }
+  .basket-item, .basket h3{
+   padding: 5px 10px;
+  }
+  .basket-item span,
+  .basket-item a {
+   padding: 0 7px
+  }

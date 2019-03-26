@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>mistake</title>
+  <style>
+  .night{ background: #000; color: #fff }
+  </style>
+</head>
+<body>
+  <div id="foo"></div>
+  <div id="root"></div>
+  
+<script crossorigin src="https://unpkg.com/react@16/umd/react.development.js"></script>
+<script crossorigin src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
+<script crossorigin src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/6.26.0/babel.min.js"></script>
+
+<script type='text/babel'> 
+
+var counter = {n:0}, i;
+
+for(i = 0; i < 10; i++){
+  counter.n++;	
+  setTimeout(()=>{
+	  console.log(counter);
+  },2000);	
+}
+
+
+
+
+
+
+
+
+
+
+
+
+</script> 
+
+
+
+</body>
+</html>
