@@ -4,5 +4,6 @@ const dataBook = [
   {id:6, title:"The Road to learn React", author:"Robin Wieruch", price: 1300},
   {id:8, title:"ECMAScript 6 для разработчиков", author:"Николас Закас", price: 960},
   {id:9, title:"Front-end. Клиентская разработка", author:"Крис Аквино, Тодд Ганди", price: 1200},
+  {id:11, title:"JS с котиками", author:"Нонейм"},
 ];
 

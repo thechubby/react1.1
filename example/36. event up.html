@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>всплытие события</title>
+	<style>
+	input{
+	  font-family: Courier
+	}
+	</style>
+</head>
+<body>
+  <div id="root"></div>
+  
+<script crossorigin src="https://unpkg.com/react@16/umd/react.development.js"></script>
+<script crossorigin src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
+<script crossorigin src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/6.26.0/babel.min.js"></script>
+
+<script type='text/babel'> 
+
+
+
+
+class Welcome extends React.Component{
+  constructor(props){
+	  super(props); 
+	  this.state = {value: ''}
+    this.handler = this.handler.bind(this);
+  }	
+	
+  handler(ev){
+    ev.preventDefault();
+	  const newState = {value: ev.target.value};
+	  this.setState(newState);
+		console.log(newState);
+  }
+	
+
+  render(){	  
+	  const style = {
+		  borderBottom: '5px solid orange',
+			width: this.state.value.length*8 +'px'
+		}
+    return <div>
+		<div style={style}></div>
+	  <Input1 handleChange={this.handler} />
+	  <Input2 text={this.state.value} />	  
+	</div>;
+  }
+}
+class Input1 extends React.Component{	
+
+	render(){
+		return <input onChange={this.props.handleChange}
+		 />		
+	}
+}
+class Input2 extends React.Component{	
+
+	render(){
+		return <input 
+		 value={this.props.text} readOnly={true}
+		 />		
+	}
+}
+
+
+ReactDOM.render(
+  <Welcome />,
+  document.querySelector('#root')
+);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</script> 
+
+
+
+</body>
+</html>

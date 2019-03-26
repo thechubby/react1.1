@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>input onChange</title>
+  <style>
+  .foo{ font: 2em sans-serif }
+  </style>
+</head>
+<body>
+  <div id="root"></div>
+  
+<script crossorigin src="https://unpkg.com/react@16/umd/react.development.js"></script>
+<script crossorigin src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
+<script crossorigin src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/6.26.0/babel.min.js"></script>
+
+<script type='text/babel'> 
+
+
+
+
+class Input extends React.Component{
+  constructor(props){
+	super(props); 
+	this.state = {value: ''}
+    this.handler = this.handler.bind(this);
+  }	
+	
+  handler(ev){
+    ev.preventDefault();
+	const newState = {value: ev.target.value};
+	this.setState(newState);
+  }
+	
+  render(){	  
+    return <div>
+	  <input 
+	     type='text' 
+		 name='text' 
+		 onChange={this.handler}
+		 value={this.state.value}
+		 />
+	  <div>Содержимое:{this.state.value}<br />
+	  Кол-во символова:{this.state.value.length} </div>
+	</div>;
+  }
+}
+function App(props){
+ let inputsName = ['firstName', 'lastName'];
+ let inputs = inputsName.map(
+   (inputName, index) => <Input key={index} />
+ );
+ 
+ return	<div>
+  {inputs}
+  </div>
+}
+
+ReactDOM.render(
+  <App />  ,
+  document.querySelector('#root')
+);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</script> 
+
+
+
+</body>
+</html>

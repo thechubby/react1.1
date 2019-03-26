@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>всплытие события</title>
+	<style>
+	 * {
+		 user-select: none		 
+	 }
+	</style>
+</head>
+<body>
+  <div id="root"></div>
+  
+<script crossorigin src="https://unpkg.com/react@16/umd/react.development.js"></script>
+<script crossorigin src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
+<script crossorigin src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/6.26.0/babel.min.js"></script>
+
+<script type='text/babel'> 
+
+
+
+
+class Welcome extends React.Component{
+  constructor(props){
+	  super(props); 
+	  this.state = {num: 0}
+    this.handler = this.handler.bind(this);
+  }	
+	
+  handler(){
+	  const newState = {num: this.state.num+1};
+	  this.setState(newState);
+		console.log(newState);
+  }
+	
+  render(){	  
+    return <div>
+		<div>Результаты:{this.state.num}</div>
+	  <Like handleClick={this.handler} />&nbsp;
+	  <Like handleClick={this.handler} />  
+	</div>;
+  }
+}
+class Like extends React.Component{	
+  constructor(props){
+		super(props)
+		this.handleClick = this.handleClick.bind(this)
+	}
+	
+  handleClick(ev){
+		ev.preventDefault();
+		this.props.handleClick();
+	}
+
+	render(){
+		return <a 
+		 onClick={this.handleClick}
+		 >Лайк</a>
+	}
+}
+
+
+ReactDOM.render(
+  <Welcome />,
+  document.querySelector('#root')
+);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</script> 
+
+
+
+</body>
+</html>

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Conditional render</title>
+  <style>
+  .foo{ font: 2em sans-serif }
+  </style>
+</head>
+<body>
+  <div id="root"></div>
+  
+<script crossorigin src="https://unpkg.com/react@16/umd/react.development.js"></script>
+<script crossorigin src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
+<script crossorigin src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/6.26.0/babel.min.js"></script>
+
+<script type='text/babel'> 
+
+
+
+
+function Welcome(props){
+  return <h1>Hello, {props.name}!</h1>;
+}
+function Bye(props){
+  return <h1>Bye, {props.name}!</h1>;
+}
+function Start(props){ 
+  const time = new Date();
+  console.log(arguments[0])
+  const isDay = time.getHours() > 6 && time.getHours() < 23;
+  //return isDay ? <Welcome {...props} /> : <Bye {...props} />;
+  return isDay ? <Welcome name={props.name} /> : <Bye name={props.name} />;
+}
+ReactDOM.render(
+  <Start name='Вася'/>,
+  document.querySelector('#root')
+);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</script> 
+
+
+
+</body>
+</html>

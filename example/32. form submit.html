@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>form submit</title>
+  <style>
+  .foo{ font: 2em sans-serif }
+  </style>
+</head>
+<body>
+  <div id="root"></div>
+  
+<script crossorigin src="https://unpkg.com/react@16/umd/react.development.js"></script>
+<script crossorigin src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
+<script crossorigin src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/6.26.0/babel.min.js"></script>
+
+<script type='text/babel'> 
+
+
+
+
+class Form extends React.Component{
+  constructor(props){
+	super(props); 
+    this.handler = this.handler.bind(this);
+  }	
+	
+  handler(ev){
+	console.log(ev);
+	ev.preventDefault();
+  }
+	
+  render(){
+    return <form onSubmit={this.handler}>
+	
+	<input type='text' name='login'/><br />	
+	<input type='password' name='pass'/><br />	
+	<input type='submit' />	
+	
+	</form>;
+  }
+}
+
+ReactDOM.render(
+  <Form />,
+  document.querySelector('#root')
+);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</script> 
+
+
+
+</body>
+</html>

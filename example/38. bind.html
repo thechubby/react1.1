@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>bind</title>
+
+</head>
+<body>
+  <div id="root"></div>
+  
+<script crossorigin src="https://unpkg.com/react@16/umd/react.development.js"></script>
+<script crossorigin src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
+<script crossorigin src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/6.26.0/babel.min.js"></script>
+
+<script type='text/babel'> 
+
+
+
+
+class Welcome extends React.Component{
+  constructor(props){
+	  super(props); 
+	  this.state = {num: 0}
+  }	
+	
+  handler(){
+	  console.log(this);
+	  return 'Привет мир'+this;
+  }
+	
+  render(){	  
+    return <div>{this.handler()}
+		<div onClick={this.handler}>Нажми</div>
+
+	</div>;
+  }
+}
+ReactDOM.render(
+  <Welcome />,
+  document.querySelector('#root')
+);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</script> 
+
+
+
+</body>
+</html>
